@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.glide)
     annotationProcessor(libs.glide.compiler)
 
+    implementation(libs.bundles.networking)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

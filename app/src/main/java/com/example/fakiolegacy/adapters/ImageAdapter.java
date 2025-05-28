@@ -13,7 +13,6 @@ import com.example.fakiolegacy.models.ImageItem;
 import java.util.ArrayList;
 import java.util.List;
 
-//User images and videos
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
     private List<ImageItem> images = new ArrayList<>();
