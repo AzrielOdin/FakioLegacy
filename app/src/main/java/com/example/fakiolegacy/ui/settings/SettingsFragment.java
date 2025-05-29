@@ -32,33 +32,26 @@ public class SettingsFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        // Set up WiFi only switch
         SwitchCompat wifiSwitch = binding.switchWifiOnly;
         viewModel.getWifiOnlyEnabled().observe(getViewLifecycleOwner(), wifiSwitch::setChecked);
         wifiSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             viewModel.setWifiOnlyEnabled(isChecked);
         });
 
-        // Set up version info
         viewModel.getAppVersion().observe(getViewLifecycleOwner(), version -> {
             binding.textVersionDesc.setText(version);
         });
 
-        // Set up click listeners for help cards
         binding.cardFaq.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "FAQ clicked", Toast.LENGTH_SHORT).show();
-            // Navigate to FAQ screen or open FAQ web page
         });
 
         binding.cardSupport.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "Contact Support clicked", Toast.LENGTH_SHORT).show();
-            // Navigate to support screen or open support form
         });
 
-        // Set up click listeners for about cards
         binding.cardPrivacy.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "Privacy Policy clicked", Toast.LENGTH_SHORT).show();
-            // Navigate to privacy policy screen or open privacy policy web page
         });
     }
 
