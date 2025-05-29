@@ -1,5 +1,7 @@
 package com.example.fakiolegacy.network;
 
+import com.example.fakiolegacy.utils.Config;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -8,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public class NetworkModule {
-    private static final String BASE_URL = "http://192.168.87.166:5000/";
+
     //TODO timout logic and retrty logic improvements
     private static final long TIMEOUT = 30;
 
@@ -26,7 +28,7 @@ public class NetworkModule {
 
     private static Retrofit provideRetrofit(OkHttpClient client) {
         return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Config.API_BASE_URL)
                 .client(client)
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build();
