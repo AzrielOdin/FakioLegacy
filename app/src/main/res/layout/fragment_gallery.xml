@@ -94,6 +94,7 @@
         android:layout_margin="16dp"
         android:contentDescription="Upload image"
         app:layout_anchor="@id/browser_section"
+        app:backgroundTint="@color/fakio_red"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_menu_upload" />
 
