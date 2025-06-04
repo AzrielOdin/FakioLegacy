@@ -1,6 +1,6 @@
 # Fakio Legacy
 
-App done for interview with documentation overviw of structure
+App done for interview with documentation overviw of structure of how project like this should look
 
 ## ✨ Features
 
@@ -18,7 +18,7 @@ App done for interview with documentation overviw of structure
 
 ## 🛠️ Tech Stack
 
-Fakio Legacy is built using modern Android development practices:
+Fakio Legacy is built using Android development practices:
 
 - **MVVM Architecture** with LiveData and ViewModels
 - **Material Design Components** including CoordinatorLayout and CollapsingToolbarLayout
@@ -36,9 +36,8 @@ Fakio Legacy is built using modern Android development practices:
 
 ## 📋 Requirements
 
-- Android 5.0+ (API 21+)
+- Android 7.0+ (API 24+)
 - Storage permission (for image access)
-- Internet permission (for uploads)
 
 1. Fork the repo
 2. Create a branch (`git checkout -b feature/amazing-feature`)
