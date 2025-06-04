@@ -27,6 +27,7 @@ import com.example.fakiolegacy.databinding.FragmentGalleryBinding;
 import com.example.fakiolegacy.models.FolderItem;
 import com.example.fakiolegacy.network.UploadRepository;
 import com.example.fakiolegacy.network.UploadResponse;
+import com.example.fakiolegacy.repositories.HistoryRepository;
 import com.example.fakiolegacy.repositories.ImageRepository;
 import com.example.fakiolegacy.utils.GalleryViewModelFactory;
 import com.example.fakiolegacy.utils.PermissionsHandler;
@@ -111,7 +112,7 @@ public class GalleryFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Do nothing
+
             }
         });
 
@@ -184,6 +185,9 @@ private void setupScrollAnimation() {
                     requireActivity().runOnUiThread(() ->
                             Snackbar.make(binding.getRoot(), message, Snackbar.LENGTH_SHORT).show()
                     );
+
+                    HistoryRepository historyRepository = new HistoryRepository(requireContext());
+                    historyRepository.addToHistory(response.body(), imageUri);
                 } else {
                     // Show error message
                     requireActivity().runOnUiThread(() ->
