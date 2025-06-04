@@ -6,16 +6,18 @@ public class ImageItem {
     private final String path;
     private final String name;
     private final Uri uri;
+    private final long dateModified;
 
-    // Constructor, getters and setters
-    public ImageItem(String path, String name, Uri uri) {
+    public ImageItem(String path, String name, Uri uri, long dateModified) {
         this.path = path;
         this.name = name;
         this.uri = uri;
+        this.dateModified = dateModified;
     }
 
     // Getters and setters
     public String getPath() { return path; }
     public String getName() { return name; }
     public Uri getUri() { return uri; }
+    public long getDateModified() { return dateModified; }
 }
