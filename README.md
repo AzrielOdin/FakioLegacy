@@ -10,7 +10,7 @@ App done for interview with documentation overviw of structure of how project li
 - ⚙️ Configure settings including Wi-Fi-only uploads (WIP)
 - 📱 Material Design UI with responsive layouts
 - 📷 Take pictures in app (TODO)
-- 🎥 Image support (TODO)
+- 🎥 Video support (TODO)
 
 ## 📱 Screenshots
 
