@@ -32,25 +32,25 @@ public class SettingsFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        SwitchCompat wifiSwitch = binding.switchWifiOnly;
+        SwitchCompat wifiSwitch = binding.sectionNetwork.switchWifiOnly;
         viewModel.getWifiOnlyEnabled().observe(getViewLifecycleOwner(), wifiSwitch::setChecked);
         wifiSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             viewModel.setWifiOnlyEnabled(isChecked);
         });
 
         viewModel.getAppVersion().observe(getViewLifecycleOwner(), version -> {
-            binding.textVersionDesc.setText(version);
+            binding.sectionAbout.textVersionDesc.setText(version);
         });
 
-        binding.cardFaq.setOnClickListener(v -> {
+        binding.sectionHelp.cardFaq.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "FAQ clicked", Toast.LENGTH_SHORT).show();
         });
 
-        binding.cardSupport.setOnClickListener(v -> {
+        binding.sectionHelp.cardSupport.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "Contact Support clicked", Toast.LENGTH_SHORT).show();
         });
 
-        binding.cardPrivacy.setOnClickListener(v -> {
+        binding.sectionAbout.cardPrivacy.setOnClickListener(v -> {
             Toast.makeText(requireContext(), "Privacy Policy clicked", Toast.LENGTH_SHORT).show();
         });
     }

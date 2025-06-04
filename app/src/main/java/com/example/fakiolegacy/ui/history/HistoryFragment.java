@@ -48,7 +48,7 @@ public class HistoryFragment extends Fragment {
         // Observe LiveData
         viewModel.getHistoryItems().observe(getViewLifecycleOwner(), historyItems -> {
             adapter.setHistoryItems(historyItems);
-            binding.emptyView.setVisibility(historyItems.isEmpty() ? View.VISIBLE : View.GONE);
+            binding.historyEmptyView.setVisibility(historyItems.isEmpty() ? View.VISIBLE : View.GONE);
         });
 
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading ->

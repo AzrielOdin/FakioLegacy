@@ -22,7 +22,7 @@
 
     <style name="SettingsSectionTitleStyle">
         <item name="android:textColor">@color/fakio_red</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 
     <style name="YourAppTheme" parent="ThemeOverlay.AppCompat.Dark">

@@ -10,10 +10,10 @@ public class SettingsViewModel extends ViewModel {
 
     public SettingsViewModel() {
         wifiOnlyEnabled = new MutableLiveData<>();
-        wifiOnlyEnabled.setValue(true); // Default value
+        wifiOnlyEnabled.setValue(true);
 
         appVersion = new MutableLiveData<>();
-        appVersion.setValue("1.0.0"); // Default version
+        appVersion.setValue("1.0.0");
     }
 
     public LiveData<Boolean> getWifiOnlyEnabled() {
@@ -22,7 +22,7 @@ public class SettingsViewModel extends ViewModel {
 
     public void setWifiOnlyEnabled(Boolean enabled) {
         wifiOnlyEnabled.setValue(enabled);
-        // In a real app, you would save this to SharedPreferences or a repository
+        //  save this to SharedPreferences or a repository
     }
 
     public LiveData<String> getAppVersion() {
