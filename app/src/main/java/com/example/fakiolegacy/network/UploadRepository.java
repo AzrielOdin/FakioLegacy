@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.OpenableColumns;
 
+import com.example.fakiolegacy.utils.Logger;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -87,6 +89,7 @@ public class UploadRepository {
 
         } catch (IOException e) {
             callback.onFailure(null, e);
+            Logger.logError("Failed to convert URI to file", e);
         }
     }
 }

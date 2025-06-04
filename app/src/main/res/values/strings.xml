@@ -7,7 +7,7 @@
     <string name="nav_header_subtitle">alexandru.patriche92@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="settings_action_settings">Settings</string>
+    <string name="settings_action_add">Add new</string>
 
     <string name="menu_settings">Settings</string>
     <string name="menu_gallery">Gallery</string>

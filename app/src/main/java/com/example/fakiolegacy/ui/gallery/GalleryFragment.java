@@ -25,6 +25,7 @@ import com.example.fakiolegacy.network.UploadResponse;
 import com.example.fakiolegacy.repositories.HistoryRepository;
 import com.example.fakiolegacy.repositories.ImageRepository;
 import com.example.fakiolegacy.utils.GalleryViewModelFactory;
+import com.example.fakiolegacy.utils.Logger;
 import com.example.fakiolegacy.utils.PermissionsHandler;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.snackbar.Snackbar;
@@ -175,7 +176,6 @@ private void setupScrollAnimation() {
                 requireActivity().runOnUiThread(() -> binding.progressBar.setVisibility(View.GONE));
 
                 if (response.isSuccessful() && response.body() != null) {
-                    // Show success message
                     String message = "Upload successful: " + response.body().getFilename();
                     requireActivity().runOnUiThread(() ->
                             Snackbar.make(binding.getRoot(), message, Snackbar.LENGTH_SHORT).show()
@@ -184,22 +184,21 @@ private void setupScrollAnimation() {
                     HistoryRepository historyRepository = new HistoryRepository(requireContext());
                     historyRepository.addToHistory(response.body(), imageUri);
                 } else {
-                    // Show error message
                     requireActivity().runOnUiThread(() ->
                             Snackbar.make(binding.getRoot(), "Upload failed", Snackbar.LENGTH_SHORT).show()
                     );
+                    Logger.logError("Upload failed: " + response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<UploadResponse> call, Throwable t) {
-                // Hide loading indicator
                 requireActivity().runOnUiThread(() -> binding.progressBar.setVisibility(View.GONE));
 
-                // Show error message
                 requireActivity().runOnUiThread(() ->
                         Snackbar.make(binding.getRoot(), "Error: " + t.getMessage(), Snackbar.LENGTH_SHORT).show()
                 );
+                Logger.logError("Upload failed: " + t.getMessage(), t);
             }
         });
     }
