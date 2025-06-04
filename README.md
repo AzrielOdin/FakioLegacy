@@ -4,11 +4,13 @@ App done for interview with documentation overviw of structure
 
 ## ✨ Features
 
-- 📷 Browse local images by folder with interactive preview
+- 📷 Browse local images by folder with preview
 - 🚀 Upload images to your server 
 - 📚 Track upload history with timestamps
 - ⚙️ Configure settings including Wi-Fi-only uploads (WIP)
 - 📱 Material Design UI with responsive layouts
+- 📷 Take pictures in app (TODO)
+- 🎥 Image support (TODO)
 
 ## 📱 Screenshots
 
