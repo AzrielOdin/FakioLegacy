@@ -39,9 +39,19 @@ Fakio Legacy is built using Android development practices:
 - Android 7.0+ (API 24+)
 - Storage permission (for image access)
 
+## 💾 Install
+
 1. Fork the repo
 2. Create a branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to your branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 🔧Future improvements
+
+- In app camera picture taking
+- Video support
+- Better gallery optimization and usability (tapping selected image, navigation)
+- Refresh logic of the gallery
+- Edge cases like (no images on phone, permission denied)
+- Better material reusablity 
