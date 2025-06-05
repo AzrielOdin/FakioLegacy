@@ -32,30 +32,37 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Initialize repository and ViewModel
+        initViewModel();
+        setupRecyclerView();
+        setupClearHistoryButton();
+        setupObservers();
+        viewModel.loadHistory();
+    }
+
+    private void initViewModel() {
         HistoryRepository repository = new HistoryRepository(requireContext());
         viewModel = new ViewModelProvider(this, new HistoryViewModelFactory(repository))
                 .get(HistoryViewModel.class);
+    }
 
-        // Initialize RecyclerView
+    private void setupRecyclerView() {
         adapter = new HistoryAdapter(requireContext());
         binding.historyRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.historyRecyclerView.setAdapter(adapter);
+    }
 
-        // Setup clear history button
+    private void setupClearHistoryButton() {
         binding.clearHistoryButton.setOnClickListener(v -> viewModel.clearHistory());
+    }
 
-        // Observe LiveData
+    private void setupObservers() {
         viewModel.getHistoryItems().observe(getViewLifecycleOwner(), historyItems -> {
             adapter.setHistoryItems(historyItems);
             binding.historyEmptyView.setVisibility(historyItems.isEmpty() ? View.VISIBLE : View.GONE);
         });
 
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading ->
-            binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE));
-
-        // Load history data
-        viewModel.loadHistory();
+                binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE));
     }
 
     @Override

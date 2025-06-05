@@ -15,7 +15,6 @@ public class ImageItem {
         this.dateModified = dateModified;
     }
 
-    // Getters and setters
     public String getPath() { return path; }
     public String getName() { return name; }
     public Uri getUri() { return uri; }

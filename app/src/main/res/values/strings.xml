@@ -31,4 +31,8 @@
     <string name="settings_about_version_title">App Version</string>
     <string name="settings_about_privacy_title">Privacy Policy</string>
     <string name="settings_about_privacy_desc">Read our privacy policy</string>
+
+    <string name="error_storage_permission_required">Storage permission is required to view gallery</string>
+    <string name="error_no_image_selected">Please select an image first</string>
+    <string name="error_upload_failed">Upload failed</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.fakiolegacy.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class FolderAdapter extends BaseAdapter {
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView;
