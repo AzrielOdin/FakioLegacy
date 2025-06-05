@@ -39,7 +39,7 @@ Fakio Legacy is built using Android development practices:
 - Android 7.0+ (API 24+)
 - Storage permission (for image access)
 
-## 💾 Install
+## 💾 Branching
 
 1. Fork the repo
 2. Create a branch (`git checkout -b feature/amazing-feature`)
