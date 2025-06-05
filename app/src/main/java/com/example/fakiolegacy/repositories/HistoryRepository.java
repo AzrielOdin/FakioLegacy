@@ -49,7 +49,6 @@ public class HistoryRepository {
     }
 
     private void saveHistory(List<HistoryItem> historyItems) {
-        // Limit history to 100 items
         if (historyItems.size() > 100) {
             historyItems = historyItems.subList(0, 100);
         }

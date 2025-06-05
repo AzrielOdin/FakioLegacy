@@ -16,13 +16,14 @@ import com.example.fakiolegacy.R;
 import com.example.fakiolegacy.models.HistoryItem;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
 
-    private List<HistoryItem> historyItems;
+    private List<HistoryItem> historyItems = new ArrayList<>();
     private final Context context;
     private final SimpleDateFormat dateFormat;
 
@@ -31,6 +32,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         this.dateFormat = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault());
     }
 
+    //Could be optimized using specific item diffing (DiffUtil)
     public void setHistoryItems(List<HistoryItem> historyItems) {
         this.historyItems = historyItems;
         notifyDataSetChanged();
@@ -75,7 +77,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             Glide.with(context)
                     .load(Uri.parse(item.getImagePath()))
                     .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_menu_history)
+                    .error(R.drawable.ic_launcher_background)
                     .into(imageView);
         }
     }

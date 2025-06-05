@@ -11,7 +11,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public class NetworkModule {
 
-    //TODO timout logic and retrty logic improvements
     private static final long TIMEOUT = 30;
 
     private static OkHttpClient provideOkHttpClient() {
@@ -34,7 +33,6 @@ public class NetworkModule {
                 .build();
     }
 
-   //TODO see if this is added here correctly (RETROFIRT)
     public static UploadService provideUploadService() {
         OkHttpClient client = provideOkHttpClient();
         Retrofit retrofit = provideRetrofit(client);

@@ -32,7 +32,7 @@ public class GalleryViewModel extends ViewModel {
         return selectedImage;
     }
 
-    public void loadFolders() {
+    public void loadMedia() {
         new Thread(() -> {
             List<FolderItem> folderList = repository.loadImageFolders();
             folders.postValue(folderList);

@@ -26,6 +26,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         this.listener = listener;
     }
 
+    //Could be optimized using specific item diffing (DiffUtil) depending on performance usage
+    //Galleries can become very large
+    public void setImages(List<ImageItem> images) {
+        this.images = images;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,11 +49,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @Override
     public int getItemCount() {
         return images.size();
-    }
-
-    public void setImages(List<ImageItem> images) {
-        this.images = images;
-        notifyDataSetChanged();
     }
 
     class ImageViewHolder extends RecyclerView.ViewHolder {

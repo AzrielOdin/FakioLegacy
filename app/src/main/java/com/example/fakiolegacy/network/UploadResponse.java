@@ -4,7 +4,7 @@ public class UploadResponse {
     private String message;
     private String filename;
 
-    // Getters and setters
+
     public String getMessage() {
         return message;
     }
